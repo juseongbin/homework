@@ -67,10 +67,16 @@ class QuickDelivery(Delivery):
         print('[빠른 배송 조회]')
         super().track_delivery()
         print(f'''[라이더 전화 연결]
-담당 라이더 : {rider_name}
-라이더 전화번호 : {rider_number}
+담당 라이더 : {self.rider_name}
+라이더 전화번호 : {self.rider_number}
 담당 라이더에게 전화 연결을 요청합니다.''')
         print('='*25)
 
 standard = StandardDelivery('김민수', '서울시 강남구')
 quick = QuickDelivery('이서연', '서울시 송파구', '박철수', '010-1234-5678')
+
+standard.show_info()
+standard.register_courier()
+
+quick.show_info()
+quick.call_rider()
